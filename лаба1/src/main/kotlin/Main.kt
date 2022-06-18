@@ -1,8 +1,6 @@
 fun main(args: Array<String>) {
     println("Hello World!")
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
     println("Program arguments: ${args.joinToString()}")
     var myPhone = MobilePhone(89953345667)
     myPhone.addNewContact(Contact("Semen",89543456781))
@@ -20,8 +18,8 @@ class MobilePhone(var phonenumber: Long, var contactlist : MutableList<Contact> 
 
     fun updateContact(OldUpdatePhoneContact: Contact = Contact("name",8005553535 ),
                       NewPhoneContact : Contact = Contact("name", 8005553535) ): Int {
-        var objNomer = 0// Номер экземпляра объкета
-        var ansCode = -1// Если он существует в списке контактов
+        var objNomer = 0
+        var ansCode = -1
         for (contacts in contactlist){
             if ((contacts == (OldUpdatePhoneContact)) && (objNomer == 0)){
                 contacts.title = NewPhoneContact.title
@@ -36,11 +34,11 @@ class MobilePhone(var phonenumber: Long, var contactlist : MutableList<Contact> 
     fun removeContact(RemovedContact : Contact = Contact("name", 8005553535)) : Int{
         if (contactlist.contains(RemovedContact)){
             println("Контакт успешно удален " + contactlist.remove(RemovedContact))
-            return 0 // существует
+            return 0 
         }
         else{
             println("Контакт не удален " + contactlist.remove(RemovedContact))
-            return -1 // Не существует
+            return -1 
         }
     }
 
