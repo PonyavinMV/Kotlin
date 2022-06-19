@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="BinaryTreeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-06-19T10:44:01" hostname="KOMPUTER" time="0.019">
+  <properties/>
+  <testcase name="insertNode()" classname="BinaryTreeTest" time="0.017"/>
+  <testcase name="removeNode()" classname="BinaryTreeTest" time="0.001"/>
+  <system-out><![CDATA[ [1] [2] [3] [4] [5] [6] [7] [8] [9] [10]]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

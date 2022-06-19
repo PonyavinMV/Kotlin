@@ -1,0 +1,1 @@
+class Node (var value : Int = 0, var right : Node? = null, var left : Node? = null)
