@@ -15,15 +15,15 @@ class ToDoApplication : CommandLineRunner {
         logger.info("EXECUTING : command line runner")
         val toDo = ToDo()
         while(true){
-            println("Ââåäèòå êîìàíäó")
-            println("1- äîáàâèòü äåëî; 2- äîáàâèòü òåã; 3 - óäàëèòü àêòèâíûå; 4 - óäàëèòü âûïîëíåíûå; 5 - ïîêàçàòü ñïèñîê; 6 - âûõîä")
+            println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð¼Ð°Ð½Ð´Ñƒ")
+            println("1- Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð´ÐµÐ»Ð¾; 2- Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ‚ÐµÐ³; 3 - ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ Ð°ÐºÑ‚Ð¸Ð²Ð½Ñ‹Ðµ; 4 - ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ñ‹Ðµ; 5 - Ð¿Ð¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº; 6 - Ð²Ñ‹Ñ…Ð¾Ð´")
             when(readLine()!!.toString()) {
                 "1" -> {
-                    println("Ââåäèòå îïèñàíèå")
+                    println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ðµ")
                     toDo.addItem(ToDoItem(readLine()!!.toString(), Status.ACTIVE))
                 }
                 "2" -> {
-                    println("Ââåäèòå îïèñàíèå")
+                    println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ð¿Ð¸ÑÐ°Ð½Ð¸Ðµ")
                     toDo.addTags(Tags(readLine()!!.toString()))
                 }
                 "3" -> {

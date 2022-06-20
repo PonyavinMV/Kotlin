@@ -8,81 +8,81 @@ internal class ToDoTest {
     val toDo :  ToDo = ToDo()
     @Test
     fun addItem() {
-        var testaddItem = ToDoItem("Сходить на каток", Status.ACTIVE)
+        var testaddItem = ToDoItem("РЎС…РѕРґРёС‚СЊ РЅР° РєР°С‚РѕРє", Status.ACTIVE)
         toDo.addItem(testaddItem)
-        toDo.addItem(ToDoItem("Почитать книгу", Status.DONE))
-        assertTrue(toDo.find("Сходить на каток")!! == testaddItem, "add" )
+        toDo.addItem(ToDoItem("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", Status.DONE))
+        assertTrue(toDo.find("РЎС…РѕРґРёС‚СЊ РЅР° РєР°С‚РѕРє")!! == testaddItem, "add" )
 
     }
 
     @Test
     fun deleteItem() {
-        toDo.addItem(ToDoItem("Помыть машину", Status.ACTIVE))
-        toDo.addItem(ToDoItem("Почитать книгу", Status.DONE))
-        toDo.deleteItem("Помыть машину")
-        assertTrue(toDo.find("Помыть машину") == null, "del")
+        toDo.addItem(ToDoItem("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ", Status.ACTIVE))
+        toDo.addItem(ToDoItem("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", Status.DONE))
+        toDo.deleteItem("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ")
+        assertTrue(toDo.find("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ") == null, "del")
 
     }
 
     @Test
     fun deleteActive() {
-        toDo.addItem(ToDoItem("Помыть машину", Status.ACTIVE))
-        toDo.addItem(ToDoItem("Почитать книгу", Status.DONE))
+        toDo.addItem(ToDoItem("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ", Status.ACTIVE))
+        toDo.addItem(ToDoItem("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", Status.DONE))
         toDo.deleteActive()
-        assertTrue(toDo.find("Помыть машину") == null, "del")
+        assertTrue(toDo.find("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ") == null, "del")
     }
 
     @Test
     fun deleteDone() {
-        toDo.addItem(ToDoItem("Помыть машину", Status.ACTIVE))
-        toDo.addItem(ToDoItem("Почитать книгу", Status.DONE))
+        toDo.addItem(ToDoItem("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ", Status.ACTIVE))
+        toDo.addItem(ToDoItem("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", Status.DONE))
         toDo.deleteDone()
-        assertTrue(toDo.find("Почитать книгу") == null, "del")
+        assertTrue(toDo.find("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ") == null, "del")
     }
 
     @Test
     fun deleteAll() {
-        toDo.addItem(ToDoItem("Помыть машину", Status.ACTIVE))
-        toDo.addItem(ToDoItem("Почитать книгу", Status.DONE))
+        toDo.addItem(ToDoItem("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ", Status.ACTIVE))
+        toDo.addItem(ToDoItem("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", Status.DONE))
         toDo.deleteAll()
-        assertTrue(toDo.find("Почитать книгу") == null, "del")
-        assertTrue(toDo.find("Помыть машину") == null, "del")
+        assertTrue(toDo.find("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ") == null, "del")
+        assertTrue(toDo.find("РџРѕРјС‹С‚СЊ РјР°С€РёРЅСѓ") == null, "del")
 
     }
 
     @Test
     fun find() {
-        var testfindItem = ToDoItem("Почитать книгу", Status.DONE)
+        var testfindItem = ToDoItem("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", Status.DONE)
         toDo.addItem(testfindItem)
-        assertTrue(toDo.find("Почитать книгу") !! == testfindItem, "oh")
+        assertTrue(toDo.find("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ") !! == testfindItem, "oh")
     }
 
     @Test
     fun changeItemDescription() {
-        var testchangeItem = ToDoItem("Почитать книгу", Status.DONE)
+        var testchangeItem = ToDoItem("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", Status.DONE)
         toDo.addItem(testchangeItem)
-        toDo.changeItemDescription("Почитать книгу", "Сходить на каток", Status.ACTIVE)
-        assertTrue(toDo.find("Сходить на каток",)!!.description.equals("Сходить на каток"), "chen")
+        toDo.changeItemDescription("РџРѕС‡РёС‚Р°С‚СЊ РєРЅРёРіСѓ", "РЎС…РѕРґРёС‚СЊ РЅР° РєР°С‚РѕРє", Status.ACTIVE)
+        assertTrue(toDo.find("РЎС…РѕРґРёС‚СЊ РЅР° РєР°С‚РѕРє",)!!.description.equals("РЎС…РѕРґРёС‚СЊ РЅР° РєР°С‚РѕРє"), "chen")
     }
 
     @Test
     fun addTags() {
-        var testaddTags = Tags("Учёба")
+        var testaddTags = Tags("РЈС‡С‘Р±Р°")
         toDo.addTags(testaddTags)
-        assertTrue(toDo.findTags("Учёба")!! == testaddTags, "add")
+        assertTrue(toDo.findTags("РЈС‡С‘Р±Р°")!! == testaddTags, "add")
     }
 
     @Test
     fun findTags() {
-        var testfindTags = Tags("Дом")
+        var testfindTags = Tags("Р”РѕРј")
         toDo.addTags(testfindTags)
-        assertTrue(toDo.findTags("Дом") !! == testfindTags, "find")
+        assertTrue(toDo.findTags("Р”РѕРј") !! == testfindTags, "find")
     }
 
     @Test
     fun deleteTags() {
-        toDo.addTags(Tags("Учёба"))
-        toDo.deleteTags("Учёба")
-        assertTrue(toDo.findTags("Учёба") == null, "del")
+        toDo.addTags(Tags("РЈС‡С‘Р±Р°"))
+        toDo.deleteTags("РЈС‡С‘Р±Р°")
+        assertTrue(toDo.findTags("РЈС‡С‘Р±Р°") == null, "del")
     }
 }
